@@ -17,6 +17,10 @@ function App() {
         </Route>
         <Route path="/topics">
         </Route>
+        <Route path="/signin">
+        </Route>
+        <Route path="/signup">
+        </Route>
       </Switch>
     </Router>
   );

@@ -1,10 +1,10 @@
 import React from 'react'
-import CounterItem from '../../molecules/counterItem';
+import SignUp from '../../molecules/signUp';
 
 const index = () => {
   return (
     <>
-      <CounterItem />
+      <SignUp />
     </>
   )
 }
