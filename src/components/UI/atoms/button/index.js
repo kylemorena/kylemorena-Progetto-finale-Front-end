@@ -7,17 +7,16 @@ const Index = (props) => {
   const { textProp, typeProp, variantProp, colorProp, handleClick, classes  } = props;
 
   return (
-    <>
     <Button 
+      fullWidth
       type={typeProp} 
       variant={variantProp}
       color={colorProp} 
       className={classes[typeProp]}
-      onClick={handleClick}
+      // onClick={handleClick}
     >
       {textProp}
     </Button>
-    </>
   )
 }
 
