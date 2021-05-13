@@ -4,7 +4,13 @@ import { withStyles } from '@material-ui/core/styles';
 
 
 const Index = (props) => {
-  const { textProp, typeProp, variantProp, colorProp, handleClick, classes  } = props;
+  const { 
+    textProp,
+    typeProp,
+    variantProp,
+    colorProp,
+    classes
+  } = props;
 
   return (
     <Button 
@@ -13,7 +19,6 @@ const Index = (props) => {
       variant={variantProp}
       color={colorProp} 
       className={classes[typeProp]}
-      // onClick={handleClick}
     >
       {textProp}
     </Button>

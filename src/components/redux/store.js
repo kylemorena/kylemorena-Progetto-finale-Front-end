@@ -4,6 +4,6 @@ import signUpSlice from './slices/signUpSlice';
 
 export const store = configureStore({
   reducer: {
-    user: signUpSlice
+    userSignUp: signUpSlice
   },
 });

@@ -8,15 +8,26 @@ import Input from '../../atoms/input';
 import SubmitButton from '../../atoms/button';
 //MOLECULES
 import SignUp from '../../molecules/formItem';
+//REDUX
+import { useDispatch } from 'react-redux';
+import {signUpAuth} from '../../../redux/slices/signUpSlice.js';
 //ESSENTIAL
+import {useState} from 'react';
 import {authFormLink} from '../../../utils/data';
 
 
 const Index = () => {
   const classes = useStyles();
+  const [userData,setUserData] = useState({})
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signUpAuth(userData))
+  }
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    setUserData({...userData,[e.target.id]:e.target.value});
   }
 
   return (
@@ -24,6 +35,7 @@ const Index = () => {
       <SignUp
         linkText={authFormLink.signInLink}
         toLink='/singin'
+        onSubmitProp={handleSubmit}
       >
         <Grid container spacing={3}>
           <Grid item xs={12}>
@@ -65,6 +77,7 @@ const Index = () => {
           variantProp="contained"
           colorProp="primary"
           textProp="Invia"
+          onSubmitProp={handleSubmit}
         />
       </SignUp>
     </Container>

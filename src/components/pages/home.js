@@ -23,11 +23,6 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles();
 
-  const handleAddEvent = (e) => {
-    e.preventDefault();
-    console.log('prova');
-  }
-
   return (
     <>
       <SignUpTemplate
@@ -40,14 +35,13 @@ const Home = () => {
               News
             </Typography>
             <Button color="inherit">Login</Button>
-        </Toolbar>
+          </Toolbar>
         } 
         signUpForm={
           <SignUpForm
             validate
-            onSubmit={handleAddEvent}
           />
-          } 
+        } 
       />
     </>
   )

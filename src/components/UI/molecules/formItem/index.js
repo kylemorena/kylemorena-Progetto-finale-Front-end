@@ -6,10 +6,15 @@ import LinkGrid from '../../atoms/link';
 import {useStyles} from './styles';
 
 const Index = (props) => {
-  const {children,linkText,toLink} = props;
+  const {
+    children,
+    linkText,
+    toLink,
+    onSubmitProp
+  } = props;
   const classes = useStyles();
   return (
-    <form className={classes.form} method="POST">
+    <form className={classes.form} onSubmit={onSubmitProp}>
       {children}
       <Grid container justify="flex-end">
         <LinkGrid textProp={linkText} toProp={toLink}/>
