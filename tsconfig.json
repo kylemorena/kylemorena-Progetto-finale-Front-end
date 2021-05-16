@@ -7,13 +7,6 @@
       "dom.iterable",
       "esnext"
     ],
-    "paths": {
-      "@components/*":["components/*"],
-      "@config/*":["config/*"],
-      "@interfaces/*":["interfaces/*"],
-      "@pages/*":["pages/*"],
-      "@redux/*":["redux/*"],
-    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

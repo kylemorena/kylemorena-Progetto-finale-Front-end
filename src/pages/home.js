@@ -1,5 +1,5 @@
-import SignUpTemplate from '../templates/signUpTemplate';
-import SignUpForm from '../UI/organisms/signUpForm';
+import SignUpTemplate from 'components/templates/signUpTemplate';
+import SignUpForm from 'components/UI/organisms/signUpForm';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';

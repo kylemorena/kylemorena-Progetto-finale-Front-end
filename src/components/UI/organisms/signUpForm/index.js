@@ -10,7 +10,7 @@ import SubmitButton from '../../atoms/button';
 import SignUp from '../../molecules/formItem';
 //REDUX
 import { useDispatch } from 'react-redux';
-import {signUpAuth} from '../../../redux/slices/signUpSlice.js';
+import {signUpAuth} from '../../../../redux/slices/signUpSlice.js';
 //ESSENTIAL
 import {useState} from 'react';
 import {authFormLink} from '../../../utils/data';
