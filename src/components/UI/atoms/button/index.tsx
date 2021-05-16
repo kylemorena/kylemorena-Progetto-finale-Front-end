@@ -2,8 +2,16 @@ import {styles} from './styles';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
+interface IButton {
+  textProp:string;
+  typeProp:string;
+  variantProp:string;
+  colorProp:string;
+  classes:string;
+} 
 
-const Index = (props) => {
+
+const Index:React.FC<IButton> = (props) => {
   const { 
     textProp,
     typeProp,
@@ -11,21 +19,16 @@ const Index = (props) => {
     colorProp,
     classes
   } = props;
+  console.log(textProp)
 
   return (
-    <Button 
-      fullWidth
-      type={typeProp} 
-      variant={variantProp}
-      color={colorProp} 
-      className={classes[typeProp]}
-    >
+    <Button>
       {textProp}
     </Button>
   )
 }
 
-export default withStyles(styles)(Index);
+export default Index;
 
 
 

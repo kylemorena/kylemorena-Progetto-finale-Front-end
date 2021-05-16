@@ -1,7 +1,7 @@
 import Button from '../../atoms/button';
 import {useStyles} from './counterItem.styles';
 import { useDispatch } from 'react-redux'
-import { increment,decrement, } from '../../../redux/reducers/counterSlice.js'
+import { increment,decrement, } from '../../../../redux/reducers/counterSlice.js.js'
 
 const Index = () => {
   const classes = useStyles();

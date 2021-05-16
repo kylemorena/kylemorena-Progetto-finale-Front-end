@@ -1,5 +1,5 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
-import {firebase} from '../../utils/firebase.js';
+import firebase from 'config/config';
 
 export const signUpAuth = createAsyncThunk("user/createAccount", (userData) => {
   firebase.auth().createUserWithEmailAndPassword(userData.email, userData.password)

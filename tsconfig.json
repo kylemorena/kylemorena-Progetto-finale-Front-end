@@ -1,19 +1,13 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "src",
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "paths": {
-      "@components/*":["components/*"],
-      "@config/*":["config/*"],
-      "@interfaces/*":["interfaces/*"],
-      "@pages/*":["pages/*"],
-      "@redux/*":["redux/*"],
-    },
+    "baseUrl": "./src",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
