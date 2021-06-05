@@ -1,6 +1,4 @@
-import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
-import firebase from 'utils/config';
-
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface AuthState {
   accessToken:string;
@@ -13,15 +11,14 @@ const initialState:AuthState = {
   password:''
 }
 
-const Auth = createSlice({
+const AuthSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    signup: (state,action) => {
-
+    signup: (state,action:PayloadAction<AuthState>) => {
+      return action.payload;
     },
     login: (state,action) => {
-      
     }
   },
   extraReducers: {
@@ -29,6 +26,5 @@ const Auth = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-// export const { signUp } = signUpSlice.actions;
-
-export default Auth
+export const {signup,login} = AuthSlice.actions;
+export default AuthSlice

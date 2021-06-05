@@ -1,8 +1,17 @@
+import { Action, ThunkAction } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import SignUpSlice from './slices/signUpSlice'
+import Auth from "./slices/auth.slice";
 
 const rootReducer = combineReducers({
-   singup: SignUpSlice.reducer
-}) 
+	singup: Auth.reducer,
+   login: ()=>({})
+});
+export type RootState = ReturnType<typeof rootReducer>; //RootState mi permette così di accedere a tutte le proprietà dello store
+/* esempio
+   const a:RootState;
+   a."tutte le proprietà di store"
+*/
 
-export default rootReducer
+export type AppThunk = ThunkAction<void, RootState, null, Action<string>>; //AppThunk è una funzione.
+
+export default rootReducer;

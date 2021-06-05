@@ -4,8 +4,7 @@ import ChangePasswordPage from 'pages/auth/ChangePassword';
 import ForgetPage from 'pages/auth/Forget';
 import LogInPage from 'pages/auth/Login';
 import LogOutPage from 'pages/auth/Logout';
-import RegisterPage from 'pages/auth/Register';
-import Register from 'pages/auth/Register';
+import SignUpPage from 'pages/auth/Signup';
 
 const routes: IRoute[] = [
     {
@@ -34,7 +33,7 @@ const routes: IRoute[] = [
         exact: true,
         component: LogInPage,
         name: 'Login Page',
-        protected: true
+        protected: false
     },
     {
         path: '/logout',
@@ -44,11 +43,11 @@ const routes: IRoute[] = [
         protected: true
     },
     {
-        path: '/register',
+        path: '/signup',
         exact: true,
-        component: Register,
+        component: SignUpPage,
         name: 'Register Page',
-        protected: true
+        protected: false
     },
 ];
 

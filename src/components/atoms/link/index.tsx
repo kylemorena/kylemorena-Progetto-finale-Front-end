@@ -8,7 +8,6 @@ const Index: React.FC<{
 }> = ({toProp,children}) => {
 	return (
 		<Grid item>
-			{/* FIXME: da fare il check del prop "to" deve esserci un prop-types/default */}
 			<Link component={RouterLink} to={toProp}>
 				{children}
 			</Link>

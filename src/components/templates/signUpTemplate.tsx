@@ -7,7 +7,7 @@ interface ISignUpTemplate {
 	sections: {};
 }
 
-const signUpTemplate: React.FC<ISignUpTemplate> = ({
+const SignUpTemplate: React.FC<ISignUpTemplate> = ({
 	navBar,
 	sections,
 }: ISignUpTemplate) => {
@@ -21,4 +21,4 @@ const signUpTemplate: React.FC<ISignUpTemplate> = ({
 	);
 };
 
-export default signUpTemplate;
+export default SignUpTemplate;
