@@ -1,9 +1,8 @@
 import SignUpTemplate from "components/templates/signUpTemplate";
-import SignUpForm from "components/UI/organisms/signUpForm";
+import SignUpForm from "components/organisms/signUpForm";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 
 //ATOMS
@@ -26,6 +25,7 @@ const Home: React.FC<any> = () => {
 	return (
 		<>
 			<SignUpTemplate
+				// TODO: da creare il componente NavBar
 				navBar={
 					<Toolbar>
 						<IconButton
@@ -39,10 +39,9 @@ const Home: React.FC<any> = () => {
 						<Typography variant="h6" className={classes.title}>
 							News
 						</Typography>
-						<Button color="inherit">Login</Button>
 					</Toolbar>
 				}
-				signUpForm={<SignUpForm />}
+				sections={<SignUpForm />}
 			/>
 		</>
 	);

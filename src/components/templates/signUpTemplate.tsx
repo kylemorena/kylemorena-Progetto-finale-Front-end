@@ -1,18 +1,24 @@
-import React from 'react'
-import Container from '@material-ui/core/Container';
-import AppBar from '@material-ui/core/AppBar';
+import React from "react";
+import Container from "@material-ui/core/Container";
+import AppBar from "@material-ui/core/AppBar";
 
-const signUpTemplate :React.FC<{navBar: {}, signUpForm:{} }> = (props) => {
-  const { navBar,signUpForm } = props;
-
-  return (
-    <>
-      <AppBar position="static">{navBar}</AppBar>
-      <Container component="main">
-        {signUpForm}
-      </Container>
-    </>
-  )
+interface ISignUpTemplate {
+	navBar: {};
+	sections: {};
 }
+
+const signUpTemplate: React.FC<ISignUpTemplate> = ({
+	navBar,
+	sections,
+}: ISignUpTemplate) => {
+	return (
+		<>
+			<AppBar position="static">{navBar}</AppBar>
+			<Container component="main" maxWidth="xs">
+				{sections}
+			</Container>
+		</>
+	);
+};
 
 export default signUpTemplate;

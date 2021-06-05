@@ -8,15 +8,24 @@ interface IInputProps {
 	labelProp: string;
 	nameProp: string;
 	autoCompleteProp: string;
-	onChangeProp: () => void;
+	onChangeProp?: any;
+
 }
 
-const Input: React.VFC<IInputProps> = ({
+const Input: React.VFC<{
+	typeProp: string;
+	variantProp: "standard" | "filled" | "outlined";
+	idProp: string;
+	nameProp: string;
+	labelProp: string;
+	autoCompleteProp: string;
+	onChangeProp?: any;
+}> = ({
 	typeProp,
 	variantProp,
 	idProp,
-	labelProp,
 	nameProp,
+	labelProp,
 	autoCompleteProp,
 	onChangeProp,
 }: IInputProps) => {
@@ -27,8 +36,8 @@ const Input: React.VFC<IInputProps> = ({
 			type={typeProp}
 			variant={variantProp}
 			id={idProp}
-			label={labelProp}
 			name={nameProp}
+			label={labelProp}
 			autoComplete={autoCompleteProp}
 			onChange={onChangeProp}
 		/>
