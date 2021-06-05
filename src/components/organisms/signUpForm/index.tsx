@@ -1,10 +1,14 @@
 import React from "react";
 import FormItem from "components/molecules/formItem";
+import { useDispatch } from "react-redux";
+import { SignUp } from "redux/thunks/signup";
 
 const SingUpForm = () => {
-	const handleSubmit = (event:React.FormEvent<HTMLInputElement>) => {
-		event.preventDefault()
-	}
+	const dispatch = useDispatch();
+	const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
+		event.preventDefault();
+		dispatch(SignUp());
+	};
 
 	return (
 		<FormItem
