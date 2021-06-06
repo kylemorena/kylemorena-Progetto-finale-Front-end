@@ -3,8 +3,8 @@ import { combineReducers } from "redux";
 import Auth from "./slices/auth.slice";
 
 const rootReducer = combineReducers({
-	singup: Auth.reducer,
-   login: ()=>({})
+	authReducer: Auth.reducer,
+   anotherReducer: ()=>({})
 });
 export type RootState = ReturnType<typeof rootReducer>; //RootState mi permette così di accedere a tutte le proprietà dello store
 /* esempio

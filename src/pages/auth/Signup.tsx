@@ -3,6 +3,8 @@ import IPageProps from "interfaces/pages";
 import SignUpTemplate from "components/templates/signUpTemplate";
 import { IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
 import SignUpForm from "components/organisms/signUpForm";
+import { useSelector } from "react-redux";
+import { RootState } from "redux/rootReducer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SignUp: React.FC<IPageProps> = (props) => {
+	const accessToken = useSelector((state:RootState) => state.authReducer.accessToken)
 	const classes = useStyles();
 
 	return (
@@ -40,7 +43,7 @@ const SignUp: React.FC<IPageProps> = (props) => {
 			}
 			sections={
 				<>
-					{/* <Typography>{accessToken}</Typography> */}
+					<Typography>{accessToken}</Typography>
 					<SignUpForm />
 				</>
 			}

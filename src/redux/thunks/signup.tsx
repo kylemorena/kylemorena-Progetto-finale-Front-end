@@ -1,5 +1,10 @@
 import { AppThunk } from "redux/rootReducer"
+import { signup } from "redux/slices/auth.slice"
 
 export const SignUp = ():AppThunk => (dispatch) => {
-   console.log('signup')
+   dispatch(signup({
+      accessToken: "1231312312",
+      email: "lasdas@gmail.com",
+      password: "lasdas",
+   }))
 }
