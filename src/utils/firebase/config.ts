@@ -1,13 +1,13 @@
 const config = {
-    firebase: {
-        apiKey: process.env.REACT_APP_FIREBASE_KEY,
-        authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
-        projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-        storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-        messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
-        appId: process.env.REACT_APP_FIREBASE_APP_ID,
-        measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-    }
-}
+	firebase: {
+		apiKey: "AIzaSyB8r292AR_OOsO140bCEVZwCdQ_IW72BDE",
+		authDomain: "prova-chiave.firebaseapp.com",
+		projectId: "prova-chiave",
+		storageBucket: "prova-chiave.appspot.com",
+		messagingSenderId: "514233859446",
+		appId: "1:514233859446:web:9c9afbf51ebb0ce2810e57",
+		measurementId: "G-X1BGD2BBXY",
+	},
+};
 
-export default config
+export default config;

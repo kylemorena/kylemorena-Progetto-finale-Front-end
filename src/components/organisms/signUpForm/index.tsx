@@ -4,10 +4,16 @@ import { useDispatch } from "react-redux";
 import { SignUp } from "redux/thunks/signup";
 
 const SingUpForm = () => {
+	type data = { name: string; age: number };
+	const dataValue: data = {
+		name: "prova",
+		age: 123,
+	};
 	const dispatch = useDispatch();
 	const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
 		event.preventDefault();
-		dispatch(SignUp());
+		dispatch(SignUp({email:'ciaone@gmail.com',password:'21312dasdasd'}));
+		sessionStorage.setItem("accessToken", JSON.stringify(dataValue));
 	};
 
 	return (
