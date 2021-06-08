@@ -5,8 +5,6 @@ import { IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
 import SignUpForm from "components/organisms/signUpForm";
 import { useSelector } from "react-redux";
 import { RootState } from "redux/rootReducer";
-
-
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
