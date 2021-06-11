@@ -6,20 +6,23 @@ import Button from "components/atoms/button";
 import Link from "components/atoms/link";
 //Essential
 import { useStyles } from "./styles";
+import { ChangeEvent } from "react";
 
-interface IFormItem {
-	buttonText: string;
-	linkText: string;
-	toLink: string;
-	onSubmitProp: any;
-}
+// interface IFormItem {
+// 	buttonText: string;
+// 	linkText: string;
+// 	toLink: string;
+// 	onSubmitProp: any;
+// 	onChangeProp:()=>void;
+// }
 
 const FormItem: React.FC<{
 	buttonText: string;
 	linkText: string;
 	toLink: string;
 	onSubmitProp: any;
-}> = ({ buttonText, linkText, toLink, onSubmitProp }: IFormItem) => {
+	onChangeProp:(e:ChangeEvent<HTMLInputElement>)=>void;
+}> = ({ buttonText, linkText, toLink, onSubmitProp,onChangeProp }) => {
 	const classes = useStyles();
 	return (
 		<form className={classes.form} onSubmit={onSubmitProp} noValidate>
@@ -32,6 +35,7 @@ const FormItem: React.FC<{
 						nameProp="email"
 						labelProp="Email Address"
 						autoCompleteProp="email"
+						onChangeProp={onChangeProp}
 					/>
 				</Grid>
 				<Grid item xs={12}>
@@ -42,6 +46,7 @@ const FormItem: React.FC<{
 						nameProp="password"
 						labelProp="Password"
 						autoCompleteProp="current-password"
+						onChangeProp={onChangeProp}
 					/>
 				</Grid>
 				<Grid item xs={12}>
