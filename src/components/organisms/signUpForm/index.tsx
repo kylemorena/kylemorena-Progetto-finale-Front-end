@@ -2,20 +2,31 @@ import React, { ChangeEvent, useState } from 'react'
 import FormItem from 'components/molecules/formItem'
 import { useDispatch } from 'react-redux'
 import { SignUp } from 'redux/thunks/signup'
+import IUserData from 'interfaces/Iuserdata'
 
 const SingUpForm = () => {
   const dispatch = useDispatch()
-  const [userData, setUserData] = useState({})
-  console.log('file: index.tsx ~ line 9 ~ SingUpForm ~ userData', userData)
+  const [userData, setUserData] = useState<IUserData>({
+    email:'',
+    password:'',
+  })
+
+  // const dataContainer: IUserData = {
+  //   email: '',
+  //   password: ''
+  // }
 
   const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault()
-    dispatch(SignUp({ email: 'ciaone@gmail.com', password: '21312dasdasd' }))
+    dispatch(SignUp(userData))
   }
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setUserData({
-      ...userData,
-      [e.target.id]: e.target.value || e.target.checked || 'nessun dato'
+    // setUserData({
+    // ...userData,
+    // [e.target.id]: e.target.value || e.target.checked || 'nessun dato'
+    // })
+    setUserData((prevState) => {
+      return { ...prevState, [e.target.id]: e.target.value }
     })
   }
 

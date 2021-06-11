@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import IUserData from "interfaces/Iuserdata";
 // import { AppThunk } from "redux/rootReducer";
 // import { signup, AuthState } from "redux/slices/auth.slice";
 import { auth } from "utils/firebase";
@@ -17,11 +18,11 @@ import { auth } from "utils/firebase";
 
 export const SignUp = createAsyncThunk<
    void,
-   { email: string; password: string }
+   IUserData
 >("user/singup", async (payload, { rejectWithValue }) => {
    try {
       await auth
-         .createUserWithEmailAndPassword(payload.email, payload.password)
+         .createUserWithEmailAndPassword(payload.email, payload?.password)
          .then((userCred) => {
             console.log(userCred.user?.email);
          });

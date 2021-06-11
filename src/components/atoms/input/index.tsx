@@ -1,6 +1,5 @@
 import TextField from '@material-ui/core/TextField'
 import React, { ChangeEvent } from 'react'
-import useInputValue from 'hooks/useInputValue'
 
 // interface IInputProps {
 //    typeProp: string;
@@ -29,7 +28,6 @@ const Input: React.VFC<{
   autoCompleteProp,
   onChangeProp,
 }) => {
-  const { setValue } = useInputValue()   
 
   return (
     <TextField

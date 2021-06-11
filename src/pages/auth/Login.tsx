@@ -1,5 +1,5 @@
 import React from "react";
-import IPageProps from "interfaces/pages";
+import IPageProps from "interfaces/Ipages";
 
 const LogIn: React.FC<IPageProps> = (props) => {
 

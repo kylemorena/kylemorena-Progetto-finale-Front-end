@@ -1,4 +1,4 @@
-import IRoute from 'interfaces/route';
+import IRoute from 'interfaces/Iroute';
 import HomePage from 'pages/home';
 import ChangePasswordPage from 'pages/auth/ChangePassword';
 import ForgetPage from 'pages/auth/Forget';

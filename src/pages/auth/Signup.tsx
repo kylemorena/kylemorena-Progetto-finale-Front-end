@@ -1,5 +1,5 @@
 import React from "react";
-import IPageProps from "interfaces/pages";
+import IPageProps from "interfaces/Ipages";
 import SignUpTemplate from "components/templates/signUpTemplate";
 import { IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
 import SignUpForm from "components/organisms/signUpForm";
