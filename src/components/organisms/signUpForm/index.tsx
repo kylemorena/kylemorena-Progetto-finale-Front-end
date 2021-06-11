@@ -7,24 +7,16 @@ import IUserData from 'interfaces/Iuserdata'
 const SingUpForm = () => {
   const dispatch = useDispatch()
   const [userData, setUserData] = useState<IUserData>({
-    email:'',
-    password:'',
+    email: '',
+    password: ''
   })
-
-  // const dataContainer: IUserData = {
-  //   email: '',
-  //   password: ''
-  // }
 
   const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault()
     dispatch(SignUp(userData))
   }
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // setUserData({
-    // ...userData,
-    // [e.target.id]: e.target.value || e.target.checked || 'nessun dato'
-    // })
     setUserData((prevState) => {
       return { ...prevState, [e.target.id]: e.target.value }
     })
