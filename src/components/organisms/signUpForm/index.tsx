@@ -1,26 +1,37 @@
-import React, { ChangeEvent, useState } from 'react'
-import FormItem from 'components/molecules/formItem'
-import { useDispatch } from 'react-redux'
-import { SignUp } from 'redux/thunks/signup'
-import IUserData from 'interfaces/Iuserdata'
+import React, { ChangeEvent, useState } from 'react';
+import FormItem from 'components/molecules/formItem';
+import IUserData from 'interfaces/Iuserdata';
+import { SignUpThunk } from 'redux/thunks/signup';
+import { unwrapResult } from '@reduxjs/toolkit';
+import { useHistory } from 'react-router-dom';
+import { useAppDispatch } from 'redux/store';
 
 const SingUpForm = () => {
-  const dispatch = useDispatch()
+  const history = useHistory()
+  const dispatch = useAppDispatch();
   const [userData, setUserData] = useState<IUserData>({
     email: '',
-    password: ''
-  })
+    password: '',
+  });
 
   const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
-    event.preventDefault()
-    dispatch(SignUp(userData))
-  }
+    event.preventDefault();
+    dispatch(SignUpThunk(userData))
+      .then(unwrapResult)
+      .then((success) => {
+        console.log('Success', success);
+        history.push('/')
+      })
+      .catch((error) => {
+        console.log('Error',error);
+      });
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUserData((prevState) => {
-      return { ...prevState, [e.target.id]: e.target.value }
-    })
-  }
+      return { ...prevState, [e.target.id]: e.target.value };
+    });
+  };
 
   return (
     <FormItem
@@ -30,7 +41,7 @@ const SingUpForm = () => {
       onSubmitProp={handleSubmit}
       onChangeProp={handleChange}
     />
-  )
-}
+  );
+};
 
-export default SingUpForm
+export default SingUpForm;

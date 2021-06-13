@@ -4,7 +4,8 @@ import SignUpTemplate from "components/templates/signUpTemplate";
 import { IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
 import SignUpForm from "components/organisms/signUpForm";
 import { useSelector } from "react-redux";
-import { RootState } from "redux/rootReducer";
+import { RootState } from "redux/store";
+import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -17,9 +18,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const SignUp: React.FC<IPageProps> = (props) => {
-	const accessToken = useSelector((state:RootState) => state.authReducer.accessToken)
+const SignUp: React.FC<IPageProps> = () => {
+	const accessToken = useSelector((state:RootState) => state.authReducer.auth?.accessToken)
 	const classes = useStyles();
+	const history = useHistory();
+	const onClickHandle = () => {
+		history.push('/')
+	}
 
 	return (
 		<SignUpTemplate
@@ -31,6 +36,7 @@ const SignUp: React.FC<IPageProps> = (props) => {
 						className={classes.menuButton}
 						color="inherit"
 						aria-label="menu"
+						onClick={onClickHandle}
 					>
 						Home
 					</IconButton>
